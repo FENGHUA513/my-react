@@ -7,12 +7,16 @@ const PAGE_PATH = path.resolve(__dirname, '../src/pages')
 const paths = require('./paths')
 
 // multi entries
-exports.entries = function () {
+exports.entries = function (polyfills, hot) {
   var entryFiles = glob.sync(PAGE_PATH + '/*/*.js')
   var map = {}
   entryFiles.forEach((filePath) => {
     var filename = filePath.substring(filePath.lastIndexOf('\/') + 1, filePath.lastIndexOf('.'))
-    map[filename] = filePath
+    if (process.env.NODE_ENV !== 'production') {
+      map[filename] = [filePath, hot, polyfills]
+    } else {
+      map[filename] = [filePath, polyfills]
+    }
   })
   return map
 }

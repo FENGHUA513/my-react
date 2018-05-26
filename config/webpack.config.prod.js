@@ -60,7 +60,7 @@ module.exports = {
   devtool: shouldUseSourceMap ? 'source-map' : false,
   // In production, we only want to load the polyfills and the app code.
   // entry: [require.resolve('./polyfills')].concat(utils.entries),
-  entry: utils.entries(),
+  entry: utils.entries(require.resolve('./polyfills')),
   output: {
     // The build folder.
     path: paths.appBuild,

@@ -57,7 +57,7 @@ module.exports = {
   //   // initialization, it doesn't blow up the WebpackDevServer client, and
   //   // changing JS code would still trigger a refresh.
   // ].concat(utils.entries()),
-  entry: utils.entries(),
+  entry: utils.entries(require.resolve('react-dev-utils/webpackHotDevClient'), require.resolve('./polyfills')),
   output: {
     // Add /* filename */ comments to generated require()s in the output.
     pathinfo: true,
