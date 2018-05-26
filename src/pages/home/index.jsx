@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './index.less';
 import axios from 'axios'
 
-class App extends Component {
+class Home extends Component {
   state = {
     list: []
   }
@@ -21,7 +21,8 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
+      <div className="home">
+        首页
         {
           this.state.list.map((item, key) => {
             return <p key={key}>{item}</p>
@@ -32,4 +33,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Home;
