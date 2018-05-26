@@ -1,4 +1,4 @@
-react + mock 单页面应用 
+react + mock + 多页面单页面混合应用 
 
 // 启动项目
 
