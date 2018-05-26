@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Index from './index'
+import NoPage from './index'
 import registerServiceWorker from '@/registerServiceWorker';
 
-ReactDOM.render(<Index />, document.getElementById('root'));
+ReactDOM.render(<NoPage />, document.getElementById('root'));
 registerServiceWorker();
