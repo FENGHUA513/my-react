@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import './index.less';
 import axios from 'axios'
 
-class Login extends Component {
+class Detail extends Component {
   state = {
     list: []
   }
   componentWillMount(){
+    console.log(this.props.location.query, 'jljljlkjlk')
     axios.post('/api/list').then((res) => {
       this.setState({
         list: res.data.list
@@ -18,8 +19,8 @@ class Login extends Component {
   }
   render() {
     return (
-      <div className="login">
-        登录
+      <div className="home">
+        详情页
         {
           this.state.list.map((item, key) => {
             return <p key={key}>{item}</p>
@@ -30,4 +31,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Detail;

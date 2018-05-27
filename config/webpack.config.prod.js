@@ -12,6 +12,7 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 const utils = require('./utils')
+const px2rem = require('postcss-px2rem');
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 function resolve (dir) {
   return path.join(__dirname, '../', dir)
@@ -207,6 +208,7 @@ module.exports = {
                             ],
                             flexbox: 'no-2009',
                           }),
+                          px2rem({remUnit: 75})//设计稿根据750px(iphone6)
                         ],
                       },
                     },

@@ -13,7 +13,7 @@ const getClientEnvironment = require('./env');
 const paths = require('./paths');
 const utils = require('./utils')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-
+const px2rem = require('postcss-px2rem');
 function resolve (dir) {
   return path.join(__dirname, '../', dir)
 }
@@ -190,6 +190,7 @@ module.exports = {
                       ],
                       flexbox: 'no-2009',
                     }),
+                    px2rem({remUnit: 75})//设计稿根据750px(iphone6)
                   ],
                 },
               },

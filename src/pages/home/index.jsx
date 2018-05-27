@@ -1,33 +1,27 @@
 import React, { Component } from 'react';
+import {Link, } from 'react-router-dom'
 import './index.less';
-import axios from 'axios'
 
 class Home extends Component {
   state = {
     list: []
   }
   componentWillMount(){
-    axios.post('/api/list').then((res) => {
+    
+  }
+  handClick () {
+    console.log('跳转详情页')
 
-      console.log(res, 'res')
-      this.setState({
-        list: res.data.list
-      })
-      console.log(this.state.list, '0000')
-    })
-    axios.get('/api/user').then((res) => {
-      console.log(res, 'res')
-    })
   }
   render() {
     return (
-      <div className="home">
-        首页
-        {
-          this.state.list.map((item, key) => {
-            return <p key={key}>{item}</p>
-          })
-        }
+      <div>
+        <div className="home">
+          我是首页
+        </div>
+        <Link to={{pathname: '/detail', query:{foo: 'foo'}}}>
+          <button onClick={this.handClick}>详情页</button>
+        </Link>
       </div>
     );
   }
