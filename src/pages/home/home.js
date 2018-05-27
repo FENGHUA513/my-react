@@ -1,7 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import RouteConfig from './route'
+import {Provider} from 'react-redux';
+import store from '@/store/home/store';
 import registerServiceWorker from '@/registerServiceWorker';
 
-ReactDOM.render(<RouteConfig />, document.getElementById('root'));
+ReactDOM.render (
+	<Provider store={store}>
+		<RouteConfig />
+	</Provider>, document.getElementById('root'),
+);
 registerServiceWorker();
