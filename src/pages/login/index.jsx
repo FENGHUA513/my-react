@@ -5,9 +5,6 @@ import axios from 'axios';
 
 @observer
 class Login extends Component {
-  state = {
-    list: []
-  }
   componentWillMount(){
     this.props.store.getList()
     console.log(this.props.store.list, 'store')
