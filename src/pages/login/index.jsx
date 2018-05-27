@@ -1,27 +1,23 @@
 import React, { Component } from 'react';
 import './index.less';
-import axios from 'axios'
+import {observer} from 'mobx-react';
+import axios from 'axios';
 
+@observer
 class Login extends Component {
   state = {
     list: []
   }
   componentWillMount(){
-    axios.post('/api/list').then((res) => {
-      this.setState({
-        list: res.data.list
-      })
-    })
-    axios.get('/api/user').then((res) => {
-      console.log(res, 'res')
-    })
+    this.props.store.getList()
+    console.log(this.props.store.list, 'store')
   }
   render() {
     return (
       <div className="login">
         登录
         {
-          this.state.list.map((item, key) => {
+          this.props.store.list.map((item, key) => {
             return <p key={key}>{item}</p>
           })
         }
