@@ -3,12 +3,13 @@ import {Link, } from 'react-router-dom'
 import { connect } from 'react-redux';
 import {getData, addUser} from '@/store/home/action'
 import './index.less';
-
+import toast from 'libs/toast'
 class Home extends Component {
   state = {
     list: []
   }
   componentWillMount(){
+    toast('欢迎欢迎欢迎')
     this.props.getData()
     this.props.addUser({
       name: 'huahua'
