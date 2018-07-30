@@ -156,6 +156,9 @@ module.exports = {
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.
+              plugins: [
+                ["import", { libraryName: "antd-mobile", style: "css" }] // `style: true` 会加载 less 文件
+              ],
               cacheDirectory: true,
             },
           },

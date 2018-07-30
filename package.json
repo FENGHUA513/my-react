@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd-mobile": "^2.2.2",
     "axios": "^0.18.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "mobx": "^3.1.3",
@@ -21,6 +22,7 @@
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
     "babel-loader": "7.1.2",
+    "babel-plugin-import": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react-app": "^3.1.1",
     "babel-preset-stage-0": "^6.24.1",
