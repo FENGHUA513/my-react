@@ -3,6 +3,7 @@ import './index.less';
 import {observer} from 'mobx-react';
 import axios from 'axios';
 import {Button, Toast} from 'antd-mobile'
+import toast from 'libs/toast'
 
 @observer
 class Login extends Component {
@@ -11,7 +12,8 @@ class Login extends Component {
     console.log(this.props.store.list, 'store')
   }
   showToast() {
-    Toast.info('This is a toast tips !!!', 1);
+    toast('fafafa')
+    Toast.info('This is a toast tips !!!', 5);
   }
   render() {
     return (
@@ -19,7 +21,7 @@ class Login extends Component {
         登录
         {
           this.props.store.list.map((item, key) => {
-            return <Button type="primary" size="big" onClick={showToast}><p key={key}>{item}</p></Button>
+            return <Button style={{width: '50%'}} type="primary" size="big" onClick={this.showToast}><p key={key}>{item}</p></Button>
           })
         }
       </div>
