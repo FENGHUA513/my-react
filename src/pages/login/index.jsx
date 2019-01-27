@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import './index.less';
-import {observer} from 'mobx-react';
+import {observer, inject} from 'mobx-react';
 import axios from 'axios';
 import {Button, Toast} from 'antd-mobile'
 import toast from 'libs/toast'
 
+@inject('loginStore')
 @observer
 class Login extends Component {
   componentWillMount(){
-    this.props.store.getList()
-    console.log(this.props.store.list, 'store')
+    this.props.loginStore.getList()
+    // console.log(this.props.store.list, 'store')
   }
   showToast() {
     toast('fafafa')
@@ -18,9 +19,10 @@ class Login extends Component {
   render() {
     return (
       <div className="login">
+        <Button>你好</Button>
         登录
         {
-          this.props.store.list.map((item, key) => {
+          this.props.loginStore.list.map((item, key) => {
             return <Button style={{width: '50%'}} type="primary" size="big" onClick={this.showToast}><p key={key}>{item}</p></Button>
           })
         }

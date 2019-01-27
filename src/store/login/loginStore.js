@@ -16,4 +16,4 @@ class loginStore {
     }
 }
 
-export default loginStore;
+export default new loginStore();
