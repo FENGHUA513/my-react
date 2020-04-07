@@ -6,3 +6,7 @@ react + mock + 多页面单页面混合应用
 
  * 页面访问路径
  http://localhost:3000/home/index.html#/
+
+ * add pretter
+
+ npm i -D prettier eslint-config-prettier eslint-plugin-prettier onchange
