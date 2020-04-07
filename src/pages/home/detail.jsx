@@ -1,9 +1,17 @@
-import React, { Component, useState } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 import './index.less'
 import axios from 'axios'
 import toast from 'libs/toast'
 function Example() {
   const [count, setCount] = useState(0)
+  useEffect(() => {
+    //componentDidMount and componentDidUpdate:
+    document.title = `${count} times`
+    return () => {
+      // componentWillUnmount 组件卸载
+      document.title = ''
+    }
+  }, [count])
   return (
     <div>
       <p>You clicked {count} times</p>
