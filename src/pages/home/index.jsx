@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link, } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import { connect } from 'react-redux';
 import {getData, addUser} from '@/store/home/action'
 import './index.less';
@@ -23,7 +23,7 @@ class Home extends Component {
       <div>
         <div className="home">
           我是首页
-        </div>
+          </div>
         <Link to={{pathname: '/detail', query:{foo: 'foo'}}}>
           <button onClick={this.handClick}>详情页</button>
         </Link>

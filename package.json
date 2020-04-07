@@ -35,24 +35,29 @@
     "dotenv": "4.0.0",
     "dotenv-expand": "4.2.0",
     "eslint": "4.10.0",
+    "eslint-config-prettier": "^6.10.1",
     "eslint-config-react-app": "^2.1.0",
     "eslint-loader": "1.9.0",
     "eslint-plugin-flowtype": "2.39.1",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsx-a11y": "5.1.1",
+    "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "7.4.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "1.1.5",
     "fs-extra": "3.0.1",
     "glob": "^7.1.2",
     "html-webpack-plugin": "2.29.0",
+    "husky": "^4.2.3",
     "jest": "20.0.4",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
+    "lint-staged": "^10.1.2",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
     "postcss-px2rem": "^0.3.0",
+    "prettier": "^2.0.4",
     "promise": "8.0.1",
     "raf": "3.4.0",
     "react-dev-utils": "^5.0.1",
@@ -113,5 +118,21 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/*.{js,jsx,mjs,ts,tsx}": [
+      "node_modules/.bin/prettier --write",
+      "node_modules/.bin/eslint --fix",
+      "git add"
+    ],
+    "src/*.{css,scss,less,json,html,md,markdown}": [
+      "node_modules/.bin/prettier --write",
+      "git add"
+    ]
   }
 }
