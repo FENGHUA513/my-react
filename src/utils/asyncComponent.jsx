@@ -6,14 +6,14 @@ export default function asyncComponent(importComponent) {
       super(props);
 
       this.state = {
-        component: null
+        component: null,
       };
     }
 
     async componentDidMount() {
       const { default: component } = await importComponent();
 
-      this.setState({component});
+      this.setState({ component });
     }
 
     render() {
